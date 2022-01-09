@@ -1,0 +1,44 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'users/stil.css' %}">
+  <title>Document</title>
+</head>
+<body style="background-color: #11101d;">
+  
+  <div class="card border-primary mb-3 opct opacity-60" style="width: 60vh; margin-left: auto; margin-right: auto; margin-top: 8vh;">
+    
+    <div class="card-header"><a href="{% url 'kaydol' %}" class="btn btn-outline-primary">Kayıt Ol</a></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title" style="align-items: center">Giriş</h5>
+      <p class="card-text">
+        <form action="{% url 'base' %}" method="POST">
+          {% csrf_token %}
+          <label for="uname"><b>Kullanıcı Adı</b></label>
+            <br>
+            <div style="width:100%;">{{MyLoginForm.username|as_crispy_field}} </div>
+            <br>
+            <label ><b>Şifre</b></label>
+            <br>
+            {{MyLoginForm.password|as_crispy_field}}
+            </div>  
+            <button type="submit" class="btn btn-primary ml-5" style="width: 82%;" >Giriş Yap</button>
+         
+      </form>
+      </p>
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+    {% endif %}
+    </div>
+  </div>
+</body>
+</html>

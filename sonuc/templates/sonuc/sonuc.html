@@ -1,0 +1,53 @@
+{% extends 'dash/base.html' %}
+{% load static %}
+{% block link %}
+<div class="card-header">
+  <ul class="nav nav-tabs card-header-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ders-programi' %}">Ders Programı</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'dersler' %}">Canlı Dersler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'odev' %}">Ödevler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'sinav:main_view' %}">Sınavlar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'sonuc' %}">Sınav Sonuçları</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'duyuru' %}">Duyurular</a>
+    </li>
+  </ul>
+</div>
+{% endblock link %}
+{% block content %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Sınav</th>
+        <th scope="col"> </th>
+        <th scope="col">Puan</th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for s in sonuc %}
+      <tr>
+        
+        <th scope="row">{{ s.quiz }}</th>
+        <td> </td>
+        <td>{{ s.score }}</td>
+        
+        <td> </td>
+        
+        
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock content %}

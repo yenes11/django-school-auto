@@ -1,0 +1,80 @@
+{% extends 'dash/base.html' %}
+{% block link %}
+<div class="card-header">
+  <ul class="nav nav-tabs card-header-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'ders-programi' %}">Ders Programı</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'dersler' %}">Canlı Dersler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'odev' %}">Ödevler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'sinav:main_view' %}">Sınavlar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'sonuc' %}">Sınav Sonuçları</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'duyuru' %}">Duyurular</a>
+    </li>
+  </ul>
+</div>
+{% endblock link %}
+{% block content %}
+
+<table class="table table-responsive-lg">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      {% for saat in saatler.saatler %}
+          <th scope="col">{{ saat }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Pazartesi</th>
+      {% for ders in dersprg %}
+      {% for ler in ders.pazartesi %}
+      <td>{{ ler }}</td>
+      {% endfor %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <th scope="row">Salı</th>
+      {% for ders in dersprg %}
+      {% for ler in ders.sali %}
+      <td>{{ ler }}</td>
+      {% endfor %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <th scope="row">Çarşamba</th>
+      {% for ders in dersprg %}
+      {% for ler in ders.carsamba %}
+      <td>{{ ler }}</td>
+      {% endfor %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <th scope="row">Perşembe</th>
+      {% for ders in dersprg %}
+      {% for ler in ders.persembe %}
+      <td>{{ ler }}</td>
+      {% endfor %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <th scope="row">Cuma</th>
+      {% for ders in dersprg %}
+      {% for ler in ders.cuma %}
+      <td>{{ ler }}</td>
+      {% endfor %}
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+{% endblock content %}

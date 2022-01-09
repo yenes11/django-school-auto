@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'kullanicilar/stil.css' %}">
+  <title>Document</title>
+</head>
+<body style="background-image:url(../../static/kullanicilar/bg2.jpg);">
+  <div class="card border-primary mb-3 opct opacity-60" style="width: 60vh; margin-left: auto; margin-right: auto; margin-top: 8vh;">
+    <div class="card-header"><a href="{% url 'giris' %}" class="btn btn-outline-warning" style="float: right;">Giriş Yap</a></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Sistemden çıkış yaptınız.</h5>
+      <p class="card-text">
+        
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
+     

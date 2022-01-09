@@ -1,0 +1,42 @@
+{% extends 'dash/base.html' %}
+{% load static %}
+{% block link %}
+<div class="card-header">
+  <ul class="nav nav-tabs card-header-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ders-programi' %}">Ders Programı</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'dersler' %}">Canlı Dersler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'odev' %}">Ödevler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'sinav:main_view' %}">Sınavlar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'sonuc' %}">Sınav Sonuçları</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'duyuru' %}">Duyurular</a>
+    </li>
+  </ul>
+</div>
+{% endblock link %}
+{% endblock content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+{% block content %}
